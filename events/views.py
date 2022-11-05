@@ -9,3 +9,11 @@ class CompetitorsListView(generics.ListAPIView):
     """
     queryset = models.CompetitorType.objects.all()
     serializer_class = serializers.CompetitorTypeSerializer
+
+
+class OrganizerLevelListView(generics.ListAPIView):
+    """
+    Returns a list of available organizer's levels.
+    """
+    queryset = models.OrganizerLevel.objects.all()
+    serializer_class = serializers.OrganizerLevelSerializer

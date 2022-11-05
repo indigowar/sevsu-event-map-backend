@@ -211,18 +211,37 @@ Logical way to do so:
 1. Fetch the things available settings.
 
 `{begin}/competitor` - list of available competitors returns:
+
 ```json
 [
-    {
-        "id": 1,
-        "name": "Person"
-    },
-    {
-        "id": 2,
-        "name": "University"
-    }
+  {
+    "id": 1,
+    "name": "Person"
+  },
+  {
+    "id": 2,
+    "name": "University"
+  }
 ]
 ```
+
+`{begin}/organizers_level` - list of available organizer's levels:
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Federal",
+    "code": "FED"
+  },
+  {
+    "id": 2,
+    "name": "Regional",
+    "code": "REG"
+  }
+]
+```
+
 2. Create Organizer entity and send it to server.
 3. Create Event entity and send it to server.
 4. Send set of competitors type to server.

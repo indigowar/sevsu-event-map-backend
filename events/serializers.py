@@ -6,7 +6,8 @@ from events import models
 class OrganizerLevelSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.OrganizerLevel
-        fields = ['name', 'code']
+        fields = ['id', 'name', 'code']
+        read_only_fields = ['id']
 
 
 class OrganizerSerializer(serializers.ModelSerializer):

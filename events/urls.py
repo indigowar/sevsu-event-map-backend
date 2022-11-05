@@ -1,7 +1,8 @@
 from django.urls import path
 
-from .views import CompetitorsListView
+from events import views
 
 urlpatterns = [
-    path('competitor/', CompetitorsListView.as_view()),
+    path('competitor/', views.CompetitorsListView.as_view()),
+    path('organizer_levels/', views.OrganizerLevelListView.as_view())
 ]
