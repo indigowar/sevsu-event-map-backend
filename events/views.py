@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import generics
 
-# Create your views here.
+from events import serializers, models
+
+
+class CompetitorsListView(generics.ListAPIView):
+    queryset = models.CompetitorType.objects.all()
+    serializer_class = serializers.CompetitorTypeSerializer

@@ -43,16 +43,6 @@ where `{server}` is an address of running application.
 | Retrieve a minimal info about event | `GET`  | `{begin}/event/<id>/minimal`, where `id` is ID of Event | [more](#retrieve-minimal-info-about-event) |
 | Retrieving full info about event    | `GET`  | `{begin}/event/<id>`, where `id` is ID of Event         | [more](#retrieve-a-full-info-about-event)  |
 
-The list of API endpoints for Panel to add new entities.
-
-Logical way to do so:
-
-1. Fetch the things available settings.
-2. Create Organizer entity and send it to server.
-3. Create Event entity and send it to server.
-4. Send set of competitors type to server.
-5. Send set of subjects to server.
-
 ### Fetch filtration data
 
 This request will retrieve all data that is used in filtration(subjects, prices etc.).
@@ -211,6 +201,32 @@ contains a complete set of information about this event.
   "tlr": 5
 }
 ```
+
+### Calls for adding page.
+
+The list of API endpoints for Panel to add new entities.
+
+Logical way to do so:
+
+1. Fetch the things available settings.
+
+`{begin}/competitor` - list of available competitors returns:
+```json
+[
+    {
+        "id": 1,
+        "name": "Person"
+    },
+    {
+        "id": 2,
+        "name": "University"
+    }
+]
+```
+2. Create Organizer entity and send it to server.
+3. Create Event entity and send it to server.
+4. Send set of competitors type to server.
+5. Send set of subjects to server.
 
 ## Deploy and Running
 

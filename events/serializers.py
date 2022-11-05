@@ -14,7 +14,8 @@ class OrganizerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Organizer
-        fields = ['name', 'logo', 'level']
+        fields = ['id', 'name', 'logo', 'level']
+        read_only_fields = ['id']
 
 
 class RangeSerializer(serializers.ModelSerializer):
@@ -61,7 +62,6 @@ class MinimalEventSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Event
         fields = ['id', 'organizer', 'title', 'submission_date', 'tlr']
-
 
 # class FullEventSerializer(serializers.ModelSerializer):
 #     organizer = OrganizerSerializer()
