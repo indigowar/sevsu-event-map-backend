@@ -17,3 +17,11 @@ class OrganizerLevelListView(generics.ListAPIView):
     """
     queryset = models.OrganizerLevel.objects.all()
     serializer_class = serializers.OrganizerLevelSerializer
+
+
+class FoundingTypeListView(generics.ListAPIView):
+    """
+    Returns a list of available founding types.
+    """
+    queryset = models.FoundingType.objects.all()
+    serializer_class = serializers.FoundingTypeSerializer

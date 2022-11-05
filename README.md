@@ -242,6 +242,21 @@ Logical way to do so:
 ]
 ```
 
+`{begin}/founding_types` - list of available founding types:
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Grant"
+  },
+  {
+    "id": 2,
+    "name": "Credit"
+  }
+]
+```
+
 2. Create Organizer entity and send it to server.
 3. Create Event entity and send it to server.
 4. Send set of competitors type to server.
