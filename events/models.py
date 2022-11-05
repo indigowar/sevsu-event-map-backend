@@ -10,6 +10,9 @@ class OrganizerLevel(models.Model):
     name = models.CharField(max_length=128)
     code = models.CharField(max_length=3)
 
+    def __str__(self):
+        return '{name} ({code})'.format(name=self.name, code=self.code)
+
 
 class Organizer(models.Model):
     """
@@ -19,6 +22,9 @@ class Organizer(models.Model):
     logo = models.CharField(max_length=512)
     level = models.ForeignKey(OrganizerLevel, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
+
 
 class FoundingRange(models.Model):
     """
@@ -26,6 +32,9 @@ class FoundingRange(models.Model):
     """
     low = models.IntegerField()
     high = models.IntegerField()
+
+    def __str__(self):
+        return '({low}-{high})'.format(low=self.low, high=self.high)
 
 
 class FoundingType(models.Model):
@@ -36,6 +45,9 @@ class FoundingType(models.Model):
     """
     name = models.CharField(max_length=255, blank=False)
 
+    def __str__(self):
+        return self.name
+
 
 class CoFoundingRange(models.Model):
     """
@@ -44,6 +56,9 @@ class CoFoundingRange(models.Model):
     """
     low = models.IntegerField()
     high = models.IntegerField()
+
+    def __str__(self):
+        return '({low}-{high})'.format(low=self.low, high=self.high)
 
 
 class Event(models.Model):
@@ -66,6 +81,9 @@ class Event(models.Model):
     internal_university_contacts = models.CharField(max_length=512)
     tlr_value = models.IntegerField()
 
+    def __str__(self):
+        return self.title
+
 
 class CompetitorType(models.Model):
     """
@@ -74,6 +92,9 @@ class CompetitorType(models.Model):
     For example, One Person, a Group or a company.
     """
     name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
 
 
 class EventRequirementMapping(models.Model):
