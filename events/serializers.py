@@ -65,27 +65,17 @@ class MinimalEventSerializer(serializers.ModelSerializer):
     Event on the map.
     """
 
-    organizer = NestedOrganizerSerializer()
-
     class Meta:
         model = models.Event
         fields = ['id', 'organizer', 'title', 'submission_date', 'tlr']
+        read_only_fields = ['id']
 
-# class FullEventSerializer(serializers.ModelSerializer):
-#     organizer = OrganizerSerializer()
-#     founding_type = FoundingTypeSerializer()
-#     founding_range = FoundingRangeSerializer()
-#     co_founding_range = CoFoundingRangeSerializer()
-#
-#     class Meta:
-#         model = models.Event
-#         fields = [
-#             'id', 'title', 'organizer', 'founding_type',
-#             'founding_range', 'co_founding_range',
-#             'submission_deadline', 'consideration_period',
-#             'realisation_period', 'result', 'site', 'document',
-#             'internal_university_contacts', 'tlr',
-#
-#             'requirements', 'subjects'
-#         ]
-#         read_only_fields = ['id']
+
+class MinimalNestedEventSerializer(MinimalEventSerializer):
+    """
+    This serializer serialize only data that required to draw
+    Event on the map.
+
+    But does this nested. So the organizer is not a key, it's a structure
+    """
+    organizer = NestedOrganizerSerializer()
