@@ -25,11 +25,45 @@ A backend part of map of events.
 
 ## TODO
 
-- [ ] Write a basic API(first 4 endpoints in API table).
-- [ ] Create a authentication system using JWT tokens.
-- [ ] Write API for admin panel.
-- [ ] Setup a containers for this project.
-- [ ] Find a hosting for database and app.
+- [ ] Retrieve Organizer Levels
+
+- [ ] Get All Organizers
+- [ ] Get Organizer
+- [ ] Create Organizer
+- [ ] Delete Organizer
+- [ ] Update Organizer
+
+- [ ] Get All Competitors
+
+- [ ] Get All FoundingTypes
+
+- [ ] Get Founding Range
+- [ ] Update Founding Range
+- [ ] Create Founding Range
+- [ ] Delete Founding Range
+
+- [ ] Get CoFounding Range
+- [ ] Update CoFounding Range
+- [ ] Create CoFounding Range
+- [ ] Delete CoFounding Range
+
+- [ ] Get All Events
+- [ ] Get Event
+- [ ] Update Event
+- [ ] Create Event
+- [ ] Delete Event
+
+- [ ] Get Subjects By Event
+- [ ] Get Subject
+- [ ] Update Subject
+- [ ] Create Subject
+- [ ] Delete Subject
+
+- [ ] Get Precursors By Event(Precursor)
+- [ ] Get Precursors By Event(Successor)
+- [ ] Update Precursor
+- [ ] Delete Precursor
+- [ ] Create Precursor
 
 ## Usage of API
 
