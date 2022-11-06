@@ -31,12 +31,12 @@ class RangeSerializer(serializers.ModelSerializer):
 
 
 class FoundingRangeSerializer(RangeSerializer):
-    class Meta:
+    class Meta(RangeSerializer.Meta):
         model = models.FoundingRange
 
 
 class CoFoundingRangeSerializer(RangeSerializer):
-    class Meta:
+    class Meta(RangeSerializer.Meta):
         model = models.CoFoundingRange
 
 
@@ -99,6 +99,10 @@ class EventSerializer(serializers.ModelSerializer):
             'tlr'
         ]
         read_only_fields = ['id']
+
+
+class FullEventSerializer(EventSerializer):
+    pass
 
 
 class NestedEventSerializer(EventSerializer):

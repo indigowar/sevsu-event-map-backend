@@ -36,9 +36,25 @@ class OrganizerListCreateView(generics.ListCreateAPIView):
     serializer_class = serializers.OrganizerSerializer
 
 
-class MinimalEventListView(generics.ListAPIView, mixins.RetrieveModelMixin):
+class BaseEventListView(generics.ListAPIView, mixins.RetrieveModelMixin):
+    """
+    A base class for event lists views.
+    """
     queryset = models.Event.objects.all()
-    serializer_class = serializers.MinimalNestedEventSerializer
 
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)
+
+
+class MinimalEventListView(BaseEventListView):
+    """
+    Returns a minimal info that required to be drawn.
+    """
+    serializer_class = serializers.MinimalNestedEventSerializer
+
+
+class EventListView(BaseEventListView):
+    """
+    Returns full info about event.
+    """
+    serializer_class = serializers.NestedEventSerializer

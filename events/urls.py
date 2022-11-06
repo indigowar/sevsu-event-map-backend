@@ -7,5 +7,6 @@ urlpatterns = [
     path('organizer_levels/', views.OrganizerLevelListView.as_view()),
     path('founding_types/', views.FoundingTypeListView.as_view()),
     path('organizer/', views.OrganizerListCreateView.as_view()),
+    path('event/<int:pk>/', views.EventListView.as_view()),
     path('event/<int:pk>/minimal', views.MinimalEventListView.as_view())
 ]
