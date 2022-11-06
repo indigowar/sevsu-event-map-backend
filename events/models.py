@@ -79,7 +79,7 @@ class Event(models.Model):
     site = models.CharField(max_length=512)
     document = models.CharField(max_length=512)
     internal_university_contacts = models.CharField(max_length=512)
-    tlr_value = models.IntegerField()
+    tlr = models.IntegerField()
 
     def __str__(self):
         return self.title

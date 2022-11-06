@@ -74,3 +74,38 @@ class MinimalNestedEventSerializer(MinimalEventSerializer):
     But does this nested. So the organizer is not a key, it's a structure
     """
     organizer = NestedOrganizerSerializer()
+
+
+class EventSerializer(serializers.ModelSerializer):
+    """
+    Serialize event.
+    """
+
+    class Meta:
+        model = models.Event
+        fields = [
+            'id'
+            'organizer',
+            'founding_type',
+            'founding_range',
+            'co_founding_range',
+            'submission_deadline',
+            'consideration_period',
+            'realisation_period',
+            'result',
+            'site',
+            'document',
+            'internal_university_contacts',
+            'tlr'
+        ]
+        read_only_fields = ['id']
+
+
+class NestedEventSerializer(EventSerializer):
+    """
+    Serialize event, but with nested structures.
+    """
+    organizer = NestedOrganizerSerializer()
+    founding_type = FoundingTypeSerializer()
+    founding_range = FoundingRangeSerializer()
+    co_founding_range = CoFoundingRangeSerializer()
