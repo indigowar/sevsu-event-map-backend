@@ -208,7 +208,7 @@ The list of API endpoints for Panel to add new entities.
 
 Logical way to do so:
 
-1. Fetch the things available settings.
+#### Fetch the things available settings.
 
 `{begin}/competitor` - list of available competitors returns:
 
@@ -257,10 +257,36 @@ Logical way to do so:
 ]
 ```
 
-2. Create Organizer entity and send it to server.
-3. Create Event entity and send it to server.
-4. Send set of competitors type to server.
-5. Send set of subjects to server.
+`{begin}/organizer` - with `GET` returns list of available organizers.
+
+```json
+[
+  {
+    "id": 1,
+    "name": "OrganizerX",
+    "logo": "https://logo.example.com",
+    "level": 1
+  }
+]
+```
+
+#### Create Organizer entity and send it to server.
+
+`POST` to `{begin}/organizer` with JSON request:
+
+```json
+{
+  "name": "",
+  "logo": "",
+  "level": null
+}
+```
+
+#### Create Event entity and send it to server.
+
+#### Send set of competitors type to server.
+
+#### Send set of subjects to server.
 
 ## Deploy and Running
 
