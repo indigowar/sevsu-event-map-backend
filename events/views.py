@@ -25,3 +25,12 @@ class FoundingTypeListView(generics.ListAPIView):
     """
     queryset = models.FoundingType.objects.all()
     serializer_class = serializers.FoundingTypeSerializer
+
+
+class OrganizerListCreateView(generics.ListCreateAPIView):
+    """
+    On GET returns a list of available organizers.
+    On POST adds new organizer.
+    """
+    queryset = models.Organizer.objects.all()
+    serializer_class = serializers.OrganizerSerializer

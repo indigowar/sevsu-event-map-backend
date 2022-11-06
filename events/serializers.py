@@ -10,9 +10,16 @@ class OrganizerLevelSerializer(serializers.ModelSerializer):
         read_only_fields = ['id']
 
 
-class OrganizerSerializer(serializers.ModelSerializer):
+class NestedOrganizerSerializer(serializers.ModelSerializer):
     level = OrganizerLevelSerializer()
 
+    class Meta:
+        model = models.Organizer
+        fields = ['id', 'name', 'logo', 'level']
+        read_only_fields = ['id']
+
+
+class OrganizerSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Organizer
         fields = ['id', 'name', 'logo', 'level']
@@ -58,7 +65,7 @@ class MinimalEventSerializer(serializers.ModelSerializer):
     Event on the map.
     """
 
-    organizer = OrganizerSerializer()
+    organizer = NestedOrganizerSerializer()
 
     class Meta:
         model = models.Event
