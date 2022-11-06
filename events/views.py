@@ -46,20 +46,25 @@ class BaseEventRetrieveView(generics.ListAPIView, mixins.RetrieveModelMixin):
         return self.retrieve(request, *args, **kwargs)
 
 
-class MinimalEventRetrieveView(BaseEventRetrieveView):
+class MinimalEventView(generics.RetrieveAPIView):
     """
     Returns a minimal info that required to be drawn.
     """
+    queryset = models.Event.objects.all()
     serializer_class = serializers.MinimalNestedEventSerializer
 
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
 
-class EventRetrieveView(BaseEventRetrieveView):
+
+class EventView(generics.RetrieveUpdateDestroyAPIView):
     """
-    Returns full info about event.
+    On GET returns a full view
+    On POST updates a view
+    ON DELETE deletes a view
     """
-    serializer_class = serializers.NestedEventSerializer
-
-
-class EventRetrieveDeleteView(generics.RetrieveUpdateDestroyAPIView):
-    model = models.Event
+    queryset = models.Event.objects.all()
     serializer_class = serializers.EventSerializer
+
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
