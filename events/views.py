@@ -58,3 +58,8 @@ class EventRetrieveView(BaseEventRetrieveView):
     Returns full info about event.
     """
     serializer_class = serializers.NestedEventSerializer
+
+
+class EventRetrieveDeleteView(generics.RetrieveUpdateDestroyAPIView):
+    model = models.Event
+    serializer_class = serializers.EventSerializer

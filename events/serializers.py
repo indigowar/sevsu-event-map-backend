@@ -101,10 +101,6 @@ class EventSerializer(serializers.ModelSerializer):
         read_only_fields = ['id']
 
 
-class FullEventSerializer(EventSerializer):
-    pass
-
-
 class NestedEventSerializer(EventSerializer):
     """
     Serialize event, but with nested structures.
