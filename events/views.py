@@ -1,4 +1,4 @@
-from rest_framework import generics
+from rest_framework import generics, mixins
 
 from events import serializers, models
 
@@ -34,3 +34,11 @@ class OrganizerListCreateView(generics.ListCreateAPIView):
     """
     queryset = models.Organizer.objects.all()
     serializer_class = serializers.OrganizerSerializer
+
+
+class MinimalEventListView(generics.ListAPIView, mixins.RetrieveModelMixin):
+    queryset = models.Event.objects.all()
+    serializer_class = serializers.MinimalNestedEventSerializer
+
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)

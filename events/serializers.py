@@ -62,7 +62,7 @@ class MinimalEventSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Event
-        fields = ['id', 'organizer', 'title', 'submission_date', 'tlr']
+        fields = ['id', 'organizer', 'title', 'submission_deadline', 'tlr']
         read_only_fields = ['id']
 
 
