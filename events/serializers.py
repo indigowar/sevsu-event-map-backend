@@ -10,20 +10,15 @@ class OrganizerLevelSerializer(serializers.ModelSerializer):
         read_only_fields = ['id']
 
 
-class NestedOrganizerSerializer(serializers.ModelSerializer):
-    level = OrganizerLevelSerializer()
-
-    class Meta:
-        model = models.Organizer
-        fields = ['id', 'name', 'logo', 'level']
-        read_only_fields = ['id']
-
-
 class OrganizerSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Organizer
         fields = ['id', 'name', 'logo', 'level']
         read_only_fields = ['id']
+
+
+class NestedOrganizerSerializer(OrganizerSerializer):
+    level = OrganizerLevelSerializer()
 
 
 class RangeSerializer(serializers.ModelSerializer):
