@@ -35,7 +35,7 @@ A backend part of map of events.
 
 - [x] Get All Competitors
 
-- [ ] Get All FoundingTypes
+- [x] Get All FoundingTypes
 
 - [ ] Get Founding Range
 - [ ] Update Founding Range
