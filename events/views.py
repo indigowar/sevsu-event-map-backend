@@ -1,6 +1,30 @@
-from rest_framework import generics, mixins
+from rest_framework import generics
 
 from events import serializers, models
+
+
+class OrganizerView(generics.GenericAPIView):
+    """
+    A base class for views that uses Organizer as a model
+    """
+    queryset = models.Organizer.objects.all()
+    serializer_class = serializers.OrganizerSerializer
+
+
+class FoundingRangeView(generics.GenericAPIView):
+    """
+    A base class for views that uses Founding Range as a model
+    """
+    queryset = models.FoundingRange.objects.all()
+    serializer_class = serializers.FoundingRangeSerializer
+
+
+class EventView(generics.GenericAPIView):
+    """
+    A Base class for Views that uses Event as a model
+    """
+    queryset = models.Event.objects.all()
+    serializer_class = serializers.EventSerializer
 
 
 class CompetitorsListView(generics.ListAPIView):
@@ -27,56 +51,45 @@ class FoundingTypeListView(generics.ListAPIView):
     serializer_class = serializers.FoundingTypeSerializer
 
 
-class OrganizerListCreateView(generics.ListCreateAPIView):
+class OrganizerListCreateView(OrganizerView, generics.ListCreateAPIView):
     """
     On GET returns a list of available organizers.
     On POST adds new organizer.
     """
-    queryset = models.Organizer.objects.all()
-    serializer_class = serializers.OrganizerSerializer
 
 
-class OrganizerRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+class OrganizerRetrieveUpdateDestroyView(OrganizerView, generics.RetrieveUpdateDestroyAPIView):
     """
     On GET returns information about organizer.
     On PUT updates an organizer info.
     On DELETE deletes this organizer.
     """
-    queryset = models.Organizer.objects.all()
-    serializer_class = serializers.OrganizerSerializer
 
 
-class FoundingRangeListCreateAPIView(generics.ListCreateAPIView):
+class FoundingRangeListCreateAPIView(FoundingRangeView, generics.ListCreateAPIView):
     """
     Returns a list of founding ranges.
     """
-    queryset = models.FoundingRange.objects.all()
-    serializer_class = serializers.FoundingRangeSerializer
-
-class FoundingRangeRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = models.FoundingRange.objects.all()
-    serializer_class = serializers.FoundingRangeSerializer
 
 
-class MinimalEventView(generics.RetrieveAPIView):
+class FoundingRangeRetrieveUpdateDestroyView(FoundingRangeView, generics.RetrieveUpdateDestroyAPIView):
+    """
+    On GET return a range
+    On POST updates a range
+    On DELETE deletes a range
+    """
+
+
+class MinimalEventView(EventView, generics.RetrieveAPIView):
     """
     Returns a minimal info that required to be drawn.
     """
-    queryset = models.Event.objects.all()
-    serializer_class = serializers.MinimalNestedEventSerializer
-
-    def get(self, request, *args, **kwargs):
-        return self.retrieve(request, *args, **kwargs)
+    serializer_class = serializers.MinimalEventSerializer
 
 
-class EventView(generics.RetrieveUpdateDestroyAPIView):
+class EventView(EventView, generics.RetrieveUpdateDestroyAPIView):
     """
     On GET returns a full view
     On POST updates a view
     ON DELETE deletes a view
     """
-    queryset = models.Event.objects.all()
-    serializer_class = serializers.EventSerializer
-
-    def get(self, request, *args, **kwargs):
-        return self.retrieve(request, *args, **kwargs)
