@@ -48,11 +48,11 @@ A backend part of map of events.
 - [x] Create CoFounding Range
 - [x] Delete CoFounding Range
 
-- [ ] Get All Events
-- [ ] Get Event
-- [ ] Update Event
-- [ ] Create Event
-- [ ] Delete Event
+- [x] Get All Events
+- [x] Get Event
+- [x] Update Event
+- [x] Create Event
+- [x] Delete Event
 
 - [ ] Get Subjects By Event
 - [ ] Get Subject
