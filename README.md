@@ -33,7 +33,7 @@ A backend part of map of events.
 - [x] Delete Organizer
 - [x] Update Organizer
 
-- [ ] Get All Competitors
+- [x] Get All Competitors
 
 - [ ] Get All FoundingTypes
 
