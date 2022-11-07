@@ -33,3 +33,21 @@ class FoundingRangeRetrieveUpdateDestroyView(__RangeView, generics.RetrieveUpdat
     On POST updates a range
     On DELETE deletes a range
     """
+
+
+class CoFoundingRangeRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    On GET return a range
+    On POST updates a range
+    On DELETE deletes a range
+    """
+    queryset = CoFoundingRange
+    serializer_class = CoFoundingRangeSerializer
+
+
+class CoFoundingCreateAPIView(generics.CreateAPIView):
+    """
+    On POST adds a new co-founding range
+    """
+    queryset = CoFoundingRange
+    serializer_class = CoFoundingRangeSerializer

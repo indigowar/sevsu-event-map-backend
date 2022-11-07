@@ -43,10 +43,10 @@ A backend part of map of events.
 - [x] Create Founding Range
 - [x] Delete Founding Range
 
-- [ ] Get CoFounding Range
-- [ ] Update CoFounding Range
-- [ ] Create CoFounding Range
-- [ ] Delete CoFounding Range
+- [x] Get CoFounding Range
+- [x] Update CoFounding Range
+- [x] Create CoFounding Range
+- [x] Delete CoFounding Range
 
 - [ ] Get All Events
 - [ ] Get Event
