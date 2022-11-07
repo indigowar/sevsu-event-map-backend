@@ -6,6 +6,7 @@ urlpatterns = [
     path('organizer_levels/', views.OrganizerLevelListView.as_view()),
 
     path('organizer/', views.OrganizerListCreateView.as_view()),
+    path('organizer/<int:pk>', views.OrganizerRetrieveUpdateDestroyView.as_view()),
 
     path('competitor/', views.CompetitorsListView.as_view()),
     path('founding_types/', views.FoundingTypeListView.as_view()),

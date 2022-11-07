@@ -28,10 +28,10 @@ A backend part of map of events.
 - [x] Retrieve Organizer Levels
 
 - [x] Get All Organizers
-- [ ] Get Organizer
+- [x] Get Organizer
 - [x] Create Organizer
-- [ ] Delete Organizer
-- [ ] Update Organizer
+- [x] Delete Organizer
+- [x] Update Organizer
 
 - [ ] Get All Competitors
 

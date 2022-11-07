@@ -36,6 +36,16 @@ class OrganizerListCreateView(generics.ListCreateAPIView):
     serializer_class = serializers.OrganizerSerializer
 
 
+class OrganizerRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    On GET returns information about organizer.
+    On PUT updates an organizer info.
+    On DELETE deletes this organizer.
+    """
+    queryset = models.Organizer.objects.all()
+    serializer_class = serializers.OrganizerSerializer
+
+
 class MinimalEventView(generics.RetrieveAPIView):
     """
     Returns a minimal info that required to be drawn.
