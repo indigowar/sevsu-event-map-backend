@@ -24,6 +24,7 @@ urlpatterns = [
     path('co_founding_range/<int:pk>', foundings.CoFoundingRangeRetrieveUpdateDestroyAPIView.as_view()),
 
     # Event
-    path('event/<int:pk>/', event.RetrieveUpdateDestroyView.as_view()),
-    path('event/<int:pk>/minimal', event.MinimalRetrieveView.as_view()),
+    path('event/', event.ListCreateAPIView.as_view()),
+    path('event/<int:pk>/', event.RetrieveUpdateDestroyAPIView.as_view()),
+    path('event/<int:pk>/minimal', event.MinimalRetrieveAPIView.as_view()),
 ]

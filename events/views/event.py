@@ -12,16 +12,23 @@ class __EventView(generics.GenericAPIView):
     serializer_class = EventSerializer
 
 
-class MinimalRetrieveView(__EventView, generics.RetrieveAPIView):
+class MinimalRetrieveAPIView(__EventView, generics.RetrieveAPIView):
     """
     Returns a minimal info that required to be drawn.
     """
     serializer_class = MinimalEventSerializer
 
 
-class RetrieveUpdateDestroyView(__EventView, generics.RetrieveUpdateDestroyAPIView):
+class RetrieveUpdateDestroyAPIView(__EventView, generics.RetrieveUpdateDestroyAPIView):
     """
     On GET returns a full view
     On POST updates a view
     ON DELETE deletes a view
+    """
+
+
+class ListCreateAPIView(__EventView, generics.ListCreateAPIView):
+    """
+    On GET - returns all events.
+    On POST - adds a new one.
     """
