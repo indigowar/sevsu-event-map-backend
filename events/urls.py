@@ -1,25 +1,26 @@
 from django.urls import path
 
-from events import views
+from .views import event, organizer, competitor, foundings
 
 urlpatterns = [
     # Organizer levels
-    path('organizer_levels/', views.OrganizerLevelListView.as_view()),
+    path('organizer_levels/', organizer.LevelsListAPIView.as_view()),
 
     # Organizers
-    path('organizer/', views.OrganizerListCreateView.as_view()),
-    path('organizer/<int:pk>', views.OrganizerRetrieveUpdateDestroyView.as_view()),
+    path('organizer/', organizer.ListCreateAPIView.as_view()),
+    path('organizer/<int:pk>', organizer.RetrieveUpdateDestroyAPIView.as_view()),
 
     # Competitor Types
-    path('competitors/', views.CompetitorsListView.as_view()),
+    path('competitors/', competitor.ListView.as_view()),
 
     # Founding Types
-    path('founding_types/', views.FoundingTypeListView.as_view()),
+    path('founding_types/', foundings.TypeListView.as_view()),
 
     # Founding Range
-    path('founding_range/', views.FoundingRangeListCreateAPIView.as_view()),
-    path('founding_range/<int:pk>', views.FoundingRangeRetrieveUpdateDestroyView.as_view()),
+    path('founding_range/', foundings.FoundingRangeListCreateAPIView.as_view()),
+    path('founding_range/<int:pk>', foundings.FoundingRangeRetrieveUpdateDestroyView.as_view()),
 
-    path('event/<int:pk>/', views.EventView.as_view()),
-    path('event/<int:pk>/minimal', views.MinimalEventView.as_view())
+    # Event
+    path('event/<int:pk>/', event.RetrieveUpdateDestroyView.as_view()),
+    path('event/<int:pk>/minimal', event.MinimalRetrieveView.as_view()),
 ]
