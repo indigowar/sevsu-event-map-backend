@@ -27,9 +27,9 @@ A backend part of map of events.
 
 - [x] Retrieve Organizer Levels
 
-- [ ] Get All Organizers
+- [x] Get All Organizers
 - [ ] Get Organizer
-- [ ] Create Organizer
+- [x] Create Organizer
 - [ ] Delete Organizer
 - [ ] Update Organizer
 
