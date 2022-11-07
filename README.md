@@ -25,7 +25,7 @@ A backend part of map of events.
 
 ## TODO
 
-- [ ] Retrieve Organizer Levels
+- [x] Retrieve Organizer Levels
 
 - [ ] Get All Organizers
 - [ ] Get Organizer
