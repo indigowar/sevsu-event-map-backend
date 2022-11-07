@@ -16,6 +16,10 @@ urlpatterns = [
     # Founding Types
     path('founding_types/', views.FoundingTypeListView.as_view()),
 
+    # Founding Range
+    path('founding_range/', views.FoundingRangeListCreateAPIView.as_view()),
+    path('founding_range/<int:pk>', views.FoundingRangeRetrieveUpdateDestroyView.as_view()),
+
     path('event/<int:pk>/', views.EventView.as_view()),
     path('event/<int:pk>/minimal', views.MinimalEventView.as_view())
 ]

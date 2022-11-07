@@ -37,10 +37,11 @@ A backend part of map of events.
 
 - [x] Get All FoundingTypes
 
-- [ ] Get Founding Range
-- [ ] Update Founding Range
-- [ ] Create Founding Range
-- [ ] Delete Founding Range
+- [x] Get All founding ranges
+- [x] Get Founding Range
+- [x] Update Founding Range
+- [x] Create Founding Range
+- [x] Delete Founding Range
 
 - [ ] Get CoFounding Range
 - [ ] Update CoFounding Range

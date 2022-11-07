@@ -46,6 +46,18 @@ class OrganizerRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = serializers.OrganizerSerializer
 
 
+class FoundingRangeListCreateAPIView(generics.ListCreateAPIView):
+    """
+    Returns a list of founding ranges.
+    """
+    queryset = models.FoundingRange.objects.all()
+    serializer_class = serializers.FoundingRangeSerializer
+
+class FoundingRangeRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.FoundingRange.objects.all()
+    serializer_class = serializers.FoundingRangeSerializer
+
+
 class MinimalEventView(generics.RetrieveAPIView):
     """
     Returns a minimal info that required to be drawn.

@@ -27,7 +27,8 @@ class RangeSerializer(serializers.ModelSerializer):
     """
 
     class Meta:
-        fields = ['low', 'high']
+        fields = ['id', 'low', 'high']
+        read_only_fields = ['id']
 
 
 class FoundingRangeSerializer(RangeSerializer):
