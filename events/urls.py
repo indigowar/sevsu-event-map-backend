@@ -29,5 +29,6 @@ urlpatterns = [
     path('event/<int:pk>/minimal', event.MinimalRetrieveAPIView.as_view()),
 
     # Subjects
-    path('subject/<int:event>/', subjects.ListByEventAPIView.as_view()),
+    path('subject/event/<int:event>/', subjects.ListByEventAPIView.as_view()),
+    path('subject/id/<int:pk>/', subjects.RetrieveUpdateDestroyAPIView.as_view())
 ]

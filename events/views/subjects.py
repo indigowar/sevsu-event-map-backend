@@ -16,3 +16,9 @@ class ListByEventAPIView(__SubjectView, generics.ListAPIView):
     @property
     def event(self):
         return self.kwargs['event']
+
+
+class RetrieveUpdateDestroyAPIView(__SubjectView, generics.RetrieveUpdateDestroyAPIView):
+    """
+
+    """

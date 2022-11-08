@@ -54,11 +54,11 @@ A backend part of map of events.
 - [x] Create Event
 - [x] Delete Event
 
-- [ ] Get Subjects By Event
-- [ ] Get Subject
-- [ ] Update Subject
-- [ ] Create Subject
-- [ ] Delete Subject
+- [x] Get Subjects By Event
+- [x] Get Subject
+- [x] Update Subject
+- [x] Create Subject
+- [x] Delete Subject
 
 - [ ] Get Precursors By Event(Precursor)
 - [ ] Get Precursors By Event(Successor)
