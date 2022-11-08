@@ -111,7 +111,7 @@ class EventSubject(models.Model):
     EventSubject model defines a subject that some event has.
     """
     subject = models.CharField(max_length=255, blank=False)
-    event = models.ManyToManyField(Event)
+    event = models.OneToOneField(Event, on_delete=models.CASCADE, default=0)
 
 
 class EventPrecursor(models.Model):

@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import event, organizer, competitor, foundings
+from .views import event, organizer, competitor, foundings, subjects
 
 urlpatterns = [
     # Organizer levels
@@ -27,4 +27,7 @@ urlpatterns = [
     path('event/', event.ListCreateAPIView.as_view()),
     path('event/<int:pk>/', event.RetrieveUpdateDestroyAPIView.as_view()),
     path('event/<int:pk>/minimal', event.MinimalRetrieveAPIView.as_view()),
+
+    # Subjects
+    path('subject/<int:event>/', subjects.ListByEventAPIView.as_view()),
 ]

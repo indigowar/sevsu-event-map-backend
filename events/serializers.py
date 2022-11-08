@@ -110,3 +110,10 @@ class NestedEventSerializer(EventSerializer):
     founding_type = FoundingTypeSerializer()
     founding_range = FoundingRangeSerializer()
     co_founding_range = CoFoundingRangeSerializer()
+
+
+class SubjectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.EventSubject
+        fields = ['id', 'subject', 'event']
+        read_only_fields = ['id']
