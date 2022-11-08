@@ -9,6 +9,10 @@ class __SubjectView(generics.GenericAPIView):
     serializer_class = SubjectSerializer
 
 
+class ListCreateAPIView(__SubjectView, generics.ListCreateAPIView):
+    pass
+
+
 class ListByEventAPIView(__SubjectView, generics.ListAPIView):
     def get_queryset(self):
         return super().get_queryset().filter(event=self.event)
